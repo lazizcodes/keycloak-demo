@@ -4,14 +4,13 @@ const Keycloak = require('keycloak-connect');
 let _keycloak;
 
 const keycloakConfig = {
-  clientId: 'client-bir',
+  clientId: process.env.KC_CLIENT_ID,
   bearerOnly: true,
-  serverUrl: 'http://localhost:8080/auth',
-  realm: 'nolbir',
-  realmPublicKey:
-    'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAit9w8N2dPqyT6g38pZ5t1o8FLwtpX8SVPP7LkuA7vHot0O9XM6pkZHmij+UlpzQxdzCLHb9R2GKucLEobzq3SD01LUSJG493XPujQ90WWC1zY71phHerq2uWX0T2mjAMW3wsGEgAmJyYWCgrga23p68fKw8j5v9X6o2D9/3JMZQZv8fn7DSSbsQAFzrwQ0IlQLDkxdoGn3Nco6OB5QbuVo0BgEY6Bt9+a3M5+eFctaY49yFRFZkP2lyOFqnvvrghsnH5tRn1DO5nlYgAYFNxV1uDWOnru2TTbjLFqoUDNa5GTOVYJGVMx6g5oHJj7ogdWAukz1/WM0io1xeiFHAU1wIDAQAB',
+  serverUrl: process.env.KC_SERVER_URL,
+  realm: process.env.KC_REALM,
+  realmPublicKey: process.env.KC_REALM_PUBLIC_KEY,
   credentials: {
-    secret: 'b7887b53-6bdd-41af-888e-9d4e5f7d3412',
+    secret: process.env.KC_CLIENT_SECRET,
   },
 };
 
